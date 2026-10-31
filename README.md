@@ -105,7 +105,6 @@ bash scripts/run_all.sh
 
 ```
 RISCV_IOMMU/
-├── CLAUDE_CODE_INSTRUCTIONS_IOMMU.md   # Design specification
 ├── README.md
 ├── LICENSE
 ├── rtl/
@@ -178,6 +177,13 @@ RISCV_IOMMU/
 - PTW does not set A/D bits (pre-set in page table entries)
 - No command queue (invalidation via register writes only)
 - No MSI remapping or ATS/PRI support
+
+## How this was built
+
+This IOMMU was written quickly with AI assistance (Claude Code) in March 2026, from a written specification, as one
+of a set of SoC components. Its testbenches pass as described above, but unlike the
+[5-stage core](https://github.com/BrendanJamesLynskey/RISCV_RV32IMC_5stage), which I have since reviewed line by line
+and re-verified, it has not had that review: treat it as a working sketch rather than verified IP.
 
 ## License
 
